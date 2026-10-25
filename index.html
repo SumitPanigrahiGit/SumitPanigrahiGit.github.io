@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sumit Panigrahi | Backend and Cloud</title>
+<meta name="description" content="CSE student (2028) building backend, cloud and data engineering projects on AWS.">
+<style>
+:root{--bg:#f7f8fa;--card:#fff;--tx:#161a20;--mu:#5d6675;--ac:#1d4ed8;--bd:#e3e6eb}
+@media (prefers-color-scheme:dark){:root{--bg:#0e1013;--card:#171a1f;--tx:#e8eaed;--mu:#9aa3b2;--ac:#7aa2ff;--bd:#272c34}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif}
+main{max-width:780px;margin:0 auto;padding:48px 16px}
+h1{font-size:2rem;margin:0}h2{font-size:1.15rem;margin:36px 0 12px;text-transform:uppercase;letter-spacing:.06em;color:var(--mu)}
+.lead{font-size:1.1rem;color:var(--mu);margin:8px 0 16px}
+a{color:var(--ac)}
+.links a{margin-right:16px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:18px;margin-bottom:14px}
+.card h3{margin:0 0 4px;font-size:1.1rem}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0;padding:0;list-style:none}
+.tags li{font-size:.8rem;border:1px solid var(--bd);border-radius:999px;padding:2px 10px;color:var(--mu)}
+ul.plain{margin:8px 0 0;padding-left:20px}
+footer{margin-top:40px;color:var(--mu);font-size:.9rem}
+</style></head><body><main>
+<h1>Sumit Panigrahi</h1>
+<p class="lead">CSE student, graduating 2028. I build backend and cloud systems and deploy them on AWS.</p>
+<p class="links">
+<a href="https://github.com/SumitPanigrahiGit">GitHub</a>
+<a href="mailto:sumitofficial6002@gmail.com">Email</a>
+</p>
+
+<h2>Projects</h2>
+
+<article class="card">
+<h3>Placement Platform</h3>
+<div>REST API for job postings, signup/login and applications, deployed on AWS.</div>
+<ul class="plain">
+<li>FastAPI, SQLAlchemy, PostgreSQL; JWT auth with bcrypt password hashing</li>
+<li>Rate limiting on login, signup and pipeline endpoints (HTTP 429)</li>
+<li>Docker image on EC2; PostgreSQL on RDS in a private network, reachable only from the app's security group</li>
+<li>Container logs shipped to CloudWatch using an IAM instance role (no stored keys); log retention set to avoid cost</li>
+<li>Small HTML/JS frontend served by the API</li>
+</ul>
+<ul class="tags"><li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>Docker</li><li>EC2</li><li>RDS</li><li>IAM</li><li>CloudWatch</li></ul>
+<p><a href="https://github.com/SumitPanigrahiGit/placement-platform">Source code</a></p>
+</article>
+
+<article class="card">
+<h3>Job Skill Trends</h3>
+<div>Data pipeline that tracks which skills appear most in remote job postings.</div>
+<ul class="plain">
+<li>EventBridge schedule triggers a Lambda that fetches the Remotive API daily</li>
+<li>Raw JSON lands in an S3 data lake, partitioned by date</li>
+<li>Athena queries on top: top skills, top skills per category, rising skills week over week</li>
+<li>Deduplication view using window functions</li>
+</ul>
+<ul class="tags"><li>Python</li><li>Lambda</li><li>EventBridge</li><li>S3</li><li>Athena</li><li>SQL</li></ul>
+<p><a href="https://github.com/SumitPanigrahiGit/job-skill-trends">Source code</a></p>
+</article>
+
+<h2>Skills</h2>
+<div class="card">
+<strong>Languages:</strong> Python, SQL<br>
+<strong>Backend:</strong> FastAPI, SQLAlchemy, JWT, REST design<br>
+<strong>Cloud:</strong> AWS (EC2, RDS, VPC, IAM, S3, Lambda, EventBridge, Athena, CloudWatch)<br>
+<strong>Tools:</strong> Docker, Git, Linux
+</div>
+
+<h2>Learning log</h2>
+<p>I write up what I learn each day in <a href="https://github.com/SumitPanigrahiGit/cloud-journey-log">cloud-journey-log</a>.</p>
+
+<footer>The AWS demo is started on request to keep costs at zero. Ask and I will run it live.</footer>
+</main></body></html>
